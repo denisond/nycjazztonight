@@ -1,0 +1,96 @@
+<DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NYC Jazz Tonight</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"> -->
+
+    <!-- {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %} -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.css" rel="stylesheets"/>
+    <meta name="viewport" content="user-scalable=no">
+    <meta name="description" content="See who's playing in New York Clubs Tonight. A consice listing of jazz shows updated automatically every night">
+    <meta name="keywords" content="NYC Jazz Tonight, New York City Jazz Tonight, NY Jazz Tonight, New York Jazz Tonight, NY jazz, NY jazz clubs listings, musicians, concerts, concert halls, jazz, music">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <style>
+      .navbar {
+        background: #322b2b;
+        height: 50px;
+        transform: translate3d(0, 0, 0);
+      }
+      .navbar a {
+          color:#f4f0f0d9;
+      }
+
+      table { table-layout:fixed; width: 100%; }
+      th, td { text-align: center; font-size: 0.89em; }
+
+      .full {
+        margin-top:50px;
+        overflow: auto;
+      }
+
+      /* thead th {
+        position: sticky;
+        top: 0px;
+      }  */
+    @media only screen and (min-width: 1100px) {
+        .full {
+            width:100%;
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        .navbar a {
+            font-size: 1rem;
+        }
+        table {
+          table-layout: auto;
+        }
+        table th,table td {
+            padding: 2vw;
+            font-size: 0.6rem;
+        }
+    }
+    </style>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140302145-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140302145-1');
+    </script>
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md fixed-top">
+          <a class="navbar-brand mr-4" href="/">NYC Jazz Tonight<br /><small>See who's playing</small></a>
+
+      </nav>
+    </header>
+    <div class="full">
+        {% block content %}{% endblock %}
+      </div>
+    <div id='calendar'></div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://fullcalendar.io/js/fullcalendar-2.2.5/lib/moment.min.js"></script>
+    <script src="https://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.min.js"></script>
+</body>
+</html>
