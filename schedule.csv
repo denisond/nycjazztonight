@@ -1,351 +1,124 @@
-date,start_time,Bluenote,Dizzy's,Django,Fat Cat,Jazz Gallery,Jazz Standard,Kitano,Mezzrow,Smalls Jazz Club,Smoke Bar,Village Vanguard
-2019-07-06,01:00 AM, , , , , , , , ,Philip Harper Quintet , , 
-2019-07-06,01:30 AM, , , ,After Hours hosted by Ray Parker, , , , , , , 
-2019-07-06,01:30 PM,Classic Soul & Motown Revue Brunch: A Decade of Soul, , , , , , , , , , 
-2019-07-06,07:00 PM, , , ,Miki Yamanaka Group, , , , , ,Billy Harper Quintet, 
-2019-07-06,07:30 PM, , ,JORDAN PIPER TRIO , , ,Dr. Lonnie Smith Octet, ,"Mark Soskin, Adam Nussbaum & Jay Anderson",Billy Mintz Band , , 
-2019-07-06,08:00 PM,Dirty Dozen Brass Band, , , , , ,Roni Ben- Hur Quartet, , , , 
-2019-07-06,08:30 PM, , , , , , , , , , , LINDA MAY HAN OH
-2019-07-06,09:00 PM, , , , , , , , , ,Billy Harper Quintet, 
-2019-07-06,09:30 PM, , , , , ,Dr. Lonnie Smith Octet, , , , , 
-2019-07-06,10:00 PM, , , ,Raphael D'lugoff Quintet, , ,Roni Ben- Hur Quartet, , , , 
-2019-07-06,10:30 PM,Dirty Dozen Brass Band, ,SWING PARTY WITH THE EYAL VILNER BIG BAND , , , , ,Pianist Jon Davis,Wayne Escoffery & Tenor Traditions ,Billy Harper Quintet, LINDA MAY HAN OH
-2019-07-06,11:30 PM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-06,12:30 AM,High & Mighty Brass Band , , , , , , , , , , 
-2019-07-06,12:45 AM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-07,01:00 AM, , , , , , , , ,After-hours Jam Session , , 
-2019-07-07,01:30 AM, , , ,After Hours hosted by Greg Glassman, , , , , , , 
-2019-07-07,01:30 PM,NYU Jazz Brunch: Combo Nuvo w/ special guest Tom Scott, , , , , , , , , , 
-2019-07-07,05:00 PM, , , , , , , ,Solo Piano Salon with Spike Wilner, , , 
-2019-07-07,06:00 PM, , , ,Terry Waldo's Gotham City Band, , , , , , , 
-2019-07-07,07:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-07,07:30 PM, , , , , ,Dr. Lonnie Smith Octet, ,"Emmet Cohen, Phil Kuehn & Kyle Poole",Tad Shull Quartet , , 
-2019-07-07,08:00 PM,Dirty Dozen Brass Band, , , , , , , , , , 
-2019-07-07,08:30 PM, , , ,Jade Synstelien's Fatcat Bigband, , , , , , , LINDA MAY HAN OH
-2019-07-07,09:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-07,09:30 PM, , , , , ,Dr. Lonnie Smith Octet, , , , , 
-2019-07-07,10:30 PM,Dirty Dozen Brass Band, , , , , , ,John Merrill & Friends,David Gibson Quintet ,“Sunday Supper” with Michelle Lordi, LINDA MAY HAN OH
-2019-07-07,11:30 AM,NYU Jazz Brunch: Combo Nuvo w/ legendary saxophonist Tom Scott, , , , , , , , , , 
-2019-07-07,11:45 PM, , , , , , , , , ,Public Sound, 
-2019-07-08,01:00 AM, , , , , , , , ,After-hours Jam Session , , 
-2019-07-08,07:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-08,07:30 PM, , , , , ,Mingus Big Band: Celebrating 10 Years at Jazz Standard, ,"Kyoko Oyobe, Michael O'Brien & Andrew Atkinson",Joel Frahm Trio  , , 
-2019-07-08,08:00 PM,An Evening of Gratitude, , , , , , , , , , 
-2019-07-08,09:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-08,09:30 PM, , , , , ,Mingus Big Band: Celebrating 10 Years at Jazz Standard, , , , , 
-2019-07-08,10:30 PM,An Evening of Gratitude, , , , , , ,Guitarist Pasquale Grasso,Rodney Green Quartet ,The SMOKE Jam Session, 
-2019-07-09,01:00 AM, , , , , , , , ,After-hours Jam Session , , 
-2019-07-09,07:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-09,07:30 PM, ,Allan Harris: A Tale of Two Kings, , , ,"Ari Hoenig Quartet featuring Gilad Hekselman, Nitai Hershkovits, and Rick Rosato", ,"Jay Clayton, Frank Kimbrough & Jay Anderson",Justin Robinson Quartet , , 
-2019-07-09,08:00 PM,Ron Carter Quartet , , , , , , , , , , 
-2019-07-09,08:30 PM, , ,ITAI KRISS AND GATO GORDO , , , , , , , , 
-2019-07-09,09:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-09,09:30 PM, ,Allan Harris: A Tale of Two Kings, , , ,"Ari Hoenig Quartet featuring Gilad Hekselman, Nitai Hershkovits, and Rick Rosato", , , , , 
-2019-07-09,10:30 PM,Ron Carter Quartet , , , , , , ,Vocalist Naama Gheber,Abraham Burton Quartet ,Mike LeDonne’s Groover Quartet, 
-2019-07-09,11:15 PM, ,Late Night Session: Citizens of the Blues, , , , , , , , , 
-2019-07-10,01:00 AM, , , , , , , , ,"Charles Blenzig ""After-hours"" ", , 
-2019-07-10,07:00 PM, , , , , , , , , ,Chris Washburne & SYOTOS, 
-2019-07-10,07:30 PM, ,Emoción: The Sounds of Tango, , , ,"Ulysses Owens Jr.'s ""Generation Y""", ,Sam Yahel & Will Vinson,"Josh Lawrence ""Color Theory"" ", , 
-2019-07-10,08:00 PM,Ron Carter Quartet , , , , , , , , , , 
-2019-07-10,08:30 PM, , ,YOTAM SILBERSTEIN SOLO GUITAR , , , , , , , , 
-2019-07-10,09:00 PM, , , , , , , , , ,Chris Washburne & SYOTOS, 
-2019-07-10,09:30 PM, ,Emoción: The Sounds of Tango, , , ,"Ulysses Owens Jr.'s ""Generation Y""", , , , , 
-2019-07-10,10:30 PM,Ron Carter Quartet , ,EVAN SHERMAN BIG BAND , , , , ,"Corin Stiggall, Steve Ash & Taro Okamoto",Jay Rodriguez Trio ,Chris Washburne & SYOTOS, 
-2019-07-10,11:15 PM, ,Late Night Session: Citizens of the Blues, , , , , , , , , 
-2019-07-10,11:45 PM, , , , , , , , , ,Joe Saylor & Friends, 
-2019-07-11,01:00 AM, , , , , , , , ,Mimi Jones and The Lab Session , , 
-2019-07-11,07:00 PM, , , , , , , , , ,Russell Malone Quartet, 
-2019-07-11,07:30 PM, ,Quiana Lynell, , , ,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, ,Mike Longo & Paul West,Chip White Dedications Sextet , , 
-2019-07-11,08:00 PM,Ron Carter Quartet , , , , , , , , , , 
-2019-07-11,08:30 PM, , ,Django Duets: Lauren Henderson & Alex Brown , , , , , , , , 
-2019-07-11,09:00 PM, , , , , , , , , ,Russell Malone Quartet, 
-2019-07-11,09:30 PM, ,Quiana Lynell, , , ,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, , , , , 
-2019-07-11,10:30 PM,Ron Carter Quartet , ,Sonny Step , , , , ,Spike Wilner & Pasquale Grasso,Asaf Yuria Exorcisms Sextet ,Russell Malone Quartet, 
-2019-07-11,11:15 PM, ,Late Night Session: Citizens of the Blues, , , , , , , , , 
-2019-07-11,11:45 PM, , , , , , , , , ,Isaiah J. Thompson Quartet, 
-2019-07-12,01:00 AM, , , , , , , , ,"Wallace Roney Jr. ""After-hours"" ", , 
-2019-07-12,07:00 PM, , , , , , , , , ,Russell Malone Quartet, 
-2019-07-12,07:30 PM, ,Dr. Eddie Henderson Quintet, , ,Jihye Lee Orchestra,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, ,Adam Birnbaum Trio feat. Al Foster, Sylvia Cuenca Quartet , , 
-2019-07-12,08:00 PM,Ron Carter Quartet , , , , , ,Ed Laub Quartet, , , , 
-2019-07-12,08:30 PM, , ,Ken Fowser Quartet , , , , , , , , 
-2019-07-12,09:00 PM, , , , , , , , , ,Russell Malone Quartet, 
-2019-07-12,09:30 PM, ,Dr. Eddie Henderson Quintet, , ,Jihye Lee Orchestra,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, , , , , 
-2019-07-12,10:00 PM, , , , , , ,Ed Laub Quartet, , , , 
-2019-07-12,10:30 PM,Ron Carter Quartet , ,Los Hacheros , , , , ,"Gabrielle Stravelli, Michael Kanan & Pat O'Leary",E.J. Strickland Quintet plus Aimee Allen ,Russell Malone Quartet, 
-2019-07-12,11:15 PM, ,Late Night Session: Citizens of the Blues, , , , , , , , , 
-2019-07-12,11:45 PM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-07-12,12:30 AM,Michael Feinberg , , , , , , , , , , 
-2019-07-12,12:45 AM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-07-13,01:00 AM, , , , , , , , ,Brooklyn Circle , , 
-2019-07-13,07:00 PM, , , , , , , , , ,Russell Malone Quartet, 
-2019-07-13,07:30 PM, ,Dr. Eddie Henderson Quintet, , ,Nir Felder,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, ,Adam Birnbaum Trio feat. Al Foster, Sylvia Cuenca Quartet , , 
-2019-07-13,08:00 PM,Ron Carter Quartet , , , , , ,Valerie Capers Quartet, , , , 
-2019-07-13,08:30 PM, , ,NEAL CAINE QUINTET , , , , , , , , 
-2019-07-13,09:00 PM, , , , , , , , , ,Russell Malone Quartet, 
-2019-07-13,09:30 PM, ,Dr. Eddie Henderson Quintet, , ,Nir Felder,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, , , , , 
-2019-07-13,10:00 PM, , , , , , ,Valerie Capers Quartet, , , , 
-2019-07-13,10:30 PM,Ron Carter Quartet , ,CHINO PONS , , , , ,Pianist Jeremy Manasia,E.J. Strickland Quintet plus Aimee Allen ,Russell Malone Quartet, 
-2019-07-13,11:15 PM, ,Late Night Session: Citizens of the Blues, , , , , , , , , 
-2019-07-13,11:30 PM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-13,12:30 AM,Bassel & The Supernaturals, , , , , , , , , , 
-2019-07-13,12:45 AM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-14,01:00 AM, , , , , , , , ,After-hours Jam Session , , 
-2019-07-14,01:30 PM,Fleur Seule Celebrates Bastille Day, , , , , , , , , , 
-2019-07-14,05:00 PM, , , , , , , ,Solo Piano Salon with Spike Wilner, , , 
-2019-07-14,07:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-14,07:30 PM, ,Jeremy Bosch Plays the Music of Cheo Feliciano, , , ,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, ,Nate Radley & Gary Versace,Grant Stewart Quartet , , 
-2019-07-14,08:00 PM,Ron Carter Quartet , , , , , , , , , , 
-2019-07-14,09:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-14,09:30 PM, ,Jeremy Bosch Plays the Music of Cheo Feliciano, , , ,BILLY CHILDS – MAP TO THE TREASURE: REIMAGINING LAURA NYRO, , , , , 
-2019-07-14,10:30 PM,Ron Carter Quartet , , , , , , ,Guitarist Panas Athanatos,Nick Hempton Band ,“Sunday Supper” with Michelle Lordi, 
-2019-07-14,11:30 AM,Fleur Seule Celebrates Bastille Day, , , , , , , , , , 
-2019-07-14,11:45 PM, , , , , , , , , ,Public Sound, 
-2019-07-15,01:00 AM, , , , , , , , ,After-hours Jam Session , , 
-2019-07-15,07:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-15,07:30 PM, ,Evan Arntzen Octet featuring Jon-Erik Kellso, , , ,Mingus Big Band: Celebrating 10 Years at Jazz Standard, ,"Hendrik Meurkens, Tadataka Unno & Joe Fitzgerald",Jorge Glem Trio feat. Ari Hoenig , , 
-2019-07-15,08:00 PM,James Carter, , , , , , , , , , 
-2019-07-15,08:30 PM, , , , , , , , , , , VANGUARD JAZZ ORCHESTRA
-2019-07-15,09:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-15,09:30 PM, ,Evan Arntzen Octet featuring Jon-Erik Kellso, , , ,Mingus Big Band: Celebrating 10 Years at Jazz Standard, , , , , 
-2019-07-15,10:30 PM,James Carter, , , , , , ,Guitarist Pasquale Grasso,Giveton Gelin Quintet ,The SMOKE Jam Session, VANGUARD JAZZ ORCHESTRA
-2019-07-16,01:00 AM, , , , , , , , ,After-hours Jam Session , , 
-2019-07-16,07:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-16,07:30 PM, ,The Evan Sherman Big Band: Honoring Chick Webb, , , , , ,Carolyn Leonhart & Helen Sung,Steve Nelson Quartet , , 
-2019-07-16,08:00 PM,James Carter, , , , , , , , , , 
-2019-07-16,08:30 PM, , ,CUBA CALIENTE WITH GERARDO CONTINO AND LOS HABANEROS , , , , , , , , VIJAY IYER
-2019-07-16,09:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-16,09:30 PM, ,The Evan Sherman Big Band featuring Joy Brown: A Tribute to Dinah Washington, , , , , , , , , 
-2019-07-16,10:30 PM,James Carter, , , , , , ,Vocalist Vanessa Perea,JD Allen Quartet ,Mike LeDonne’s Groover Quartet, VIJAY IYER
-2019-07-16,11:15 PM, ,Late Night Session: Jonathan Thomas: Harlem Renaissance: Through the Eyes of Langston Hughes, , , , , , , , , 
-2019-07-17,01:00 AM, , , , , , , , ,"Julius Rodriguez Trio ""After-hours"" ", , 
-2019-07-17,07:00 PM, , , , , , , , , ,Jazz Vocalist Lezlie Harrison, 
-2019-07-17,07:30 PM, ,Ken Peplowski Quintet: The Legacy of Tram, , , , , ,Bob DeVos & Andy Laverne,Jim Greene Quartet , , 
-2019-07-17,08:00 PM,James Carter, , , , , , , , , , 
-2019-07-17,08:30 PM, , ,PASQUALE GRASSO SOLO GUITAR , , , , , , , , VIJAY IYER
-2019-07-17,09:00 PM, , , , , , , , , ,Jazz Vocalist Lezlie Harrison, 
-2019-07-17,09:30 PM, ,Bruce Williams Quintet: Portrait of Cannonball, , , , , , , , , 
-2019-07-17,10:00 PM, , ,George Delancey Big Band , , , , , , , , 
-2019-07-17,10:30 PM,James Carter, , , , , , ,Pianist Isaiah J. Thompson,Russell Hall & The Enigmatics ,Jazz Vocalist Lezlie Harrison, VIJAY IYER
-2019-07-17,11:15 PM, ,Late Night Session: Jonathan Thomas: Harlem Renaissance: Through the Eyes of Langston Hughes, , , , , , , , , 
-2019-07-17,11:45 PM, , , , , , , , , ,Joe Saylor & Friends, 
-2019-07-18,01:00 AM, , , , , , , , ,"Malick Koly ""After-hours"" ", , 
-2019-07-18,07:00 PM, , , , , , , , , ,Steve Turre Quintet, 
-2019-07-18,07:30 PM, ,Jon Faddis Quartet, , ,Lesley Mok:  The Living Collection, , ,"William Anderson, Peter Anderson & Ehud Asherie",John Bailey Quartet , , 
-2019-07-18,08:00 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", , , , , , , , , , 
-2019-07-18,08:30 PM, , , , , , , , , , , VIJAY IYER
-2019-07-18,09:00 PM, , , , , , , , , ,Steve Turre Quintet, 
-2019-07-18,09:30 PM, ,Jon Faddis Quartet, , ,Lesley Mok:  The Living Collection, , , , , , 
-2019-07-18,10:30 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", , , , , , ,Spike Wilner & Pasquale Grasso,Craig Brann Quintet ,Steve Turre Quintet, VIJAY IYER
-2019-07-18,11:15 PM, ,Late Night Session: Jonathan Thomas: Harlem Renaissance: Through the Eyes of Langston Hughes, , , , , , , , , 
-2019-07-18,11:45 PM, , , , , , , , , ,Isaiah J. Thompson Quartet, 
-2019-07-19,01:00 AM, , , , , , , , ,"Corey Wallace DUBtet ""After-hours"" ", , 
-2019-07-19,07:00 PM, , , , , , , , , ,Steve Turre Quintet, 
-2019-07-19,07:30 PM, ,Jon Faddis Quartet, , ,Nerissa Campbell Band, , ,"Vanessa Rubin, Brandon McCune, Kenny Davis & Winard Harper",John Ellis Quartet , , 
-2019-07-19,08:00 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", , , , , ,John DiMArtino Trio, , , , 
-2019-07-19,08:30 PM, , ,Ken Fowser Quartet , , , , , , , , VIJAY IYER
-2019-07-19,09:00 PM, , , , , , , , , ,Steve Turre Quintet, 
-2019-07-19,09:30 PM, ,Jon Faddis Quartet, , ,Nerissa Campbell Band, , , , , , 
-2019-07-19,10:00 PM, , , , , , ,John DiMArtino Trio, , , , 
-2019-07-19,10:30 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", ,Chris Norton , , , , ,Pianist Tardo Hammer,Randy Johnston Trio ,Steve Turre Quintet, VIJAY IYER
-2019-07-19,11:15 PM, ,Late Night Session: Jonathan Thomas: Harlem Renaissance: Through the Eyes of Langston Hughes, , , , , , , , , 
-2019-07-19,11:45 PM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-07-19,12:30 AM,Myron Walden , , , , , , , , , , 
-2019-07-19,12:45 AM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-07-20,01:30 PM,Classic Soul & Motown Revue Brunch: A Decade of Soul, , , , , , , , , , 
-2019-07-20,07:00 PM, , , , , , , , , ,Steve Turre Quintet, 
-2019-07-20,07:30 PM, ,Jon Faddis Quartet, , ,Morgan Guerin, , ,"Vanessa Rubin, Brandon McCune, Kenny Davis & Winard Harper", , , 
-2019-07-20,08:00 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", , , , , , , , , , 
-2019-07-20,08:30 PM, , , , , , , , , , , VIJAY IYER
-2019-07-20,09:00 PM, , , , , , , , , ,Steve Turre Quintet, 
-2019-07-20,09:30 PM, ,Jon Faddis Quartet, , ,Morgan Guerin, , , , , , 
-2019-07-20,10:30 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", , , , , , ,Pianist Jon Davis, ,Steve Turre Quintet, VIJAY IYER
-2019-07-20,11:15 PM, ,Late Night Session: Molly Miller & Friends, , , , , , , , , 
-2019-07-20,11:30 PM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-20,12:30 AM,Myron Walden , , , , , , , , , , 
-2019-07-20,12:45 AM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-21,01:00 PM,Swing and Hot Jazz Brunch ft. 3D Jazz Trio, , , , , , , , , , 
-2019-07-21,07:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-21,07:30 PM, ,Jon Faddis Quartet, , , , , , , , , 
-2019-07-21,08:00 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", , , , , , , , , , 
-2019-07-21,08:30 PM, , , , , , , , , , , VIJAY IYER
-2019-07-21,09:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-21,09:30 PM, ,Jon Faddis Quartet, , , , , , , , , 
-2019-07-21,10:30 AM,Swing and Hot Jazz Brunch ft. 3D Jazz Trio, , , , , , , , , , 
-2019-07-21,10:30 PM,"LIFE CYCLES: Blade, Boccato, Cowherd, Croft, Hart, Walden & Weiss", , , , , , , , ,“Sunday Supper” with Michelle Lordi, VIJAY IYER
-2019-07-21,11:45 PM, , , , , , , , , ,Public Sound, 
-2019-07-22,07:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-22,07:30 PM, ,Monday Nights with WBGO: Andrea Motis Quintet, , , , , , , , , 
-2019-07-22,08:00 PM,Victor Wooten, , , , , , , , , , 
-2019-07-22,08:30 PM, , , , , , , , , , , VANGUARD JAZZ ORCHESTRA
-2019-07-22,09:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-22,09:30 PM, ,Monday Nights with WBGO: Andrea Motis Quintet, , , , , , , , , 
-2019-07-22,10:30 PM,Victor Wooten, , , , , , , , ,Orrin Evans & The Captain Black Big Band, VANGUARD JAZZ ORCHESTRA
-2019-07-22,10:30 PM,Victor Wooten, , , , , , , , ,The SMOKE Jam Session, VANGUARD JAZZ ORCHESTRA
-2019-07-23,07:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-23,07:30 PM, ,Adrian Cox Presents Profoundly Blue, , , , , , , , , 
-2019-07-23,08:00 PM,Victor Wooten, , , , , , , , , , 
-2019-07-23,08:30 PM, , , , , , , , , , , FRED HERSCH TRIO: 10TH Anniversary
-2019-07-23,09:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-23,09:30 PM, ,Adrian Cox Presents Profoundly Blue, , , , , , , , , 
-2019-07-23,10:30 PM,Victor Wooten, , , , , , , , ,Mike LeDonne’s Groover Quartet, FRED HERSCH TRIO: 10TH Anniversary
-2019-07-23,11:15 PM, ,Late Night Session: Evan Sherman, , , , , , , , , 
-2019-07-24,07:00 PM, , , , , , , , , ,Lezlie Harrison Presents the Music of Abbey Lincoln, 
-2019-07-24,07:30 PM, ,One Step Beyond featuring Eric Person and Bryan Carrott, , , , , , , , , 
-2019-07-24,08:00 PM,Victor Wooten, , , , , , , , , , 
-2019-07-24,08:30 PM, , , , , , , , , , , FRED HERSCH TRIO: 10TH Anniversary
-2019-07-24,09:00 PM, , , , , , , , , ,Lezlie Harrison Presents the Music of Abbey Lincoln, 
-2019-07-24,09:30 PM, ,One Step Beyond featuring Eric Person and Bryan Carrott, , , , , , , , , 
-2019-07-24,10:30 PM,Victor Wooten, , , , , , , , ,Lezlie Harrison Presents the Music of Abbey Lincoln, FRED HERSCH TRIO: 10TH Anniversary
-2019-07-24,11:15 PM, ,Late Night Session: Evan Sherman, , , , , , , , , 
-2019-07-24,11:45 PM, , , , , , , , , ,Joe Saylor & Friends, 
-2019-07-25,07:00 PM, , , , , , , , , ,Adam Birnbaum Trio, 
-2019-07-25,07:30 PM, ,Catherine Russell, , ,Jazz Composers' Showcase Vol. 13, , , , , , 
-2019-07-25,08:00 PM,Meshell Ndegeocello, , , , , , , , , , 
-2019-07-25,08:30 PM, , , , , , , , , , , FRED HERSCH TRIO: 10TH Anniversary
-2019-07-25,09:00 PM, , , , , , , , , ,Adam Birnbaum Trio, 
-2019-07-25,09:30 PM, ,Catherine Russell, , ,Jazz Composers' Showcase Vol. 13, , , , , , 
-2019-07-25,10:30 PM,Meshell Ndegeocello, , , , , , , , ,Adam Birnbaum Trio, FRED HERSCH TRIO: 10TH Anniversary
-2019-07-25,11:15 PM, ,Late Night Session: Evan Sherman Big Band , , , , , , , , , 
-2019-07-25,11:45 PM, , , , , , , , , ,Isaiah J. Thompson Quartet, 
-2019-07-26,07:00 PM, , , , , , , , , ,Eric Alexander Quartet, 
-2019-07-26,07:30 PM, ,Catherine Russell, , ,Tim Burne, , , , , , 
-2019-07-26,08:00 PM,Meshell Ndegeocello, , , , , ,Ben Rosenblum Trio, , , , 
-2019-07-26,08:30 PM, , , , , , , , , , , FRED HERSCH TRIO: 10TH Anniversary
-2019-07-26,09:00 PM, , , , , , , , , ,Eric Alexander Quartet, 
-2019-07-26,09:30 PM, ,Catherine Russell, , ,Tim Burne, , , , , , 
-2019-07-26,10:00 PM, , , , , , ,Ben Rosenblum Trio, , , , 
-2019-07-26,10:30 PM,Meshell Ndegeocello, , , , , , , , ,Eric Alexander Quartet, FRED HERSCH TRIO: 10TH Anniversary
-2019-07-26,11:15 PM, ,Late Night Session: Evan Sherman, , , , , , , , , 
-2019-07-26,11:45 PM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-07-26,12:30 AM,Bria Monét, , , , , , , , , , 
-2019-07-26,12:45 AM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-07-27,07:00 PM, , , , , , , , , ,Eric Alexander Quartet, 
-2019-07-27,07:30 PM, ,Catherine Russell, , ,Tim Burne, , , , , , 
-2019-07-27,08:00 PM,Meshell Ndegeocello, , , , , ,George Colligan, , , , 
-2019-07-27,08:30 PM, , , , , , , , , , , FRED HERSCH TRIO: 10TH Anniversary
-2019-07-27,09:00 PM, , , , , , , , , ,Eric Alexander Quartet, 
-2019-07-27,09:30 PM, ,Catherine Russell, , ,Tim Burne, , , , , , 
-2019-07-27,10:00 PM, , , , , , ,George Colligan, , , , 
-2019-07-27,10:30 PM,Meshell Ndegeocello, , , , , , , , ,Eric Alexander Quartet, FRED HERSCH TRIO: 10TH Anniversary
-2019-07-27,11:15 PM, ,Late Night Dance Session: Evan Sherman Big Band , , , , , , , , , 
-2019-07-27,11:30 PM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-27,12:30 AM,Gideon King & City Blog, , , , , , , , , , 
-2019-07-27,12:45 AM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-07-28,01:30 PM,Blue Note Django Brunch ft. Stephane Wrembel & Friends , , , , , , , , , , 
-2019-07-28,07:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-28,07:30 PM, ,Catherine Russell, , , , , , , , , 
-2019-07-28,08:00 PM,Meshell Ndegeocello, , , , , , , , , , 
-2019-07-28,08:30 PM, , , , , , , , , , , FRED HERSCH TRIO: 10TH Anniversary
-2019-07-28,09:00 PM, , , , , , , , , ,“Sunday Supper” with Michelle Lordi, 
-2019-07-28,09:30 PM, ,Catherine Russell, , , , , , , , , 
-2019-07-28,10:30 PM,Meshell Ndegeocello, , , , , , , , ,“Sunday Supper” with Michelle Lordi, FRED HERSCH TRIO: 10TH Anniversary
-2019-07-28,11:30 AM,Blue Note Django Brunch ft. Stephane Wrembel & Friends , , , , , , , , , , 
-2019-07-28,11:45 PM, , , , , , , , , ,Public Sound, 
-2019-07-29,07:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-29,07:30 PM, ,Mark Gross + Strings, , , , , , , , , 
-2019-07-29,08:00 PM,Keyon Harrold , , , , , , , , , , 
-2019-07-29,08:30 PM, , , , , , , , , , , VANGUARD JAZZ ORCHESTRA
-2019-07-29,09:00 PM, , , , , , , , , ,Orrin Evans & The Captain Black Big Band, 
-2019-07-29,09:30 PM, ,Mark Gross + Strings, , , , , , , , , 
-2019-07-29,10:30 PM,Keyon Harrold , , , , , , , , ,Orrin Evans & The Captain Black Big Band, VANGUARD JAZZ ORCHESTRA
-2019-07-29,10:30 PM,Keyon Harrold , , , , , , , , ,The SMOKE Jam Session, VANGUARD JAZZ ORCHESTRA
-2019-07-30,07:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-30,07:30 PM, ,Pauline Jean, , , , , , , , , 
-2019-07-30,08:00 PM,Keyon Harrold , , , , , , , , , , 
-2019-07-30,08:30 PM, , , , , , , , , , , HAROLD MABERN TRIO 
-2019-07-30,09:00 PM, , , , , , , , , ,Mike LeDonne’s Groover Quartet, 
-2019-07-30,09:30 PM, ,Pauline Jean, , , , , , , , , 
-2019-07-30,10:30 PM,Keyon Harrold , , , , , , , , ,Mike LeDonne’s Groover Quartet, HAROLD MABERN TRIO 
-2019-07-30,11:15 PM, ,Late Night Session: The Ladybugs, , , , , , , , , 
-2019-07-31,07:00 PM, , , , , , , , , ,Lezlie Harrison Presents the Music of Abbey Lincoln, 
-2019-07-31,07:30 PM, ,Brasil Summerfest: Amaro Freitas Trio, , , , , , , , , 
-2019-07-31,08:00 PM,Keyon Harrold , , , , , , , , , , 
-2019-07-31,08:30 PM, , , , , , , , , , , HAROLD MABERN TRIO 
-2019-07-31,09:00 PM, , , , , , , , , ,Lezlie Harrison Presents the Music of Abbey Lincoln, 
-2019-07-31,09:30 PM, ,Brasil Summerfest: Amaro Freitas Trio, , , , , , , , , 
-2019-07-31,10:30 PM,Keyon Harrold , , , , , , , , ,Lezlie Harrison Presents the Music of Abbey Lincoln, HAROLD MABERN TRIO 
-2019-07-31,11:15 PM, ,Late Night Session: The Ladybugs, , , , , , , , , 
-2019-07-31,11:45 PM, , , , , , , , , ,Emmet Cohen B3 Trio, 
-2019-08-01,07:00 PM, , , , , , , , , ,Steven Kroon Latin Jazz Sextet, 
-2019-08-01,07:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , ,SECRET MALL, , , , , , 
-2019-08-01,08:00 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , , , 
-2019-08-01,08:30 PM, , , , , , , , , , , HAROLD MABERN TRIO 
-2019-08-01,09:00 PM, , , , , , , , , ,Steven Kroon Latin Jazz Sextet, 
-2019-08-01,09:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , ,SECRET MALL, , , , , , 
-2019-08-01,10:30 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , ,Steven Kroon Latin Jazz Sextet, HAROLD MABERN TRIO 
-2019-08-01,11:15 PM, ,Late Night Session: The Ladybugs, , , , , , , , , 
-2019-08-01,11:45 PM, , , , , , , , , ,Isaiah J. Thompson Quartet, 
-2019-08-02,07:00 PM, , , , , , , , , ,Aaron Diehl, 
-2019-08-02,07:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , , , , , , , , 
-2019-08-02,08:00 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , , , 
-2019-08-02,08:30 PM, , , , , , , , , , , HAROLD MABERN TRIO 
-2019-08-02,09:00 PM, , , , , , , , , ,Aaron Diehl, 
-2019-08-02,09:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , , , , , , , , 
-2019-08-02,10:30 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , ,Aaron Diehl, HAROLD MABERN TRIO 
-2019-08-02,11:15 PM, ,Late Night Session: The Ladybugs, , , , , , , , , 
-2019-08-02,11:45 PM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-08-02,12:45 AM, , , , , , , , , ,The Midnight Show with Johnny O’Neal, 
-2019-08-03,01:30 PM,Classic Soul & Motown Revue Brunch: A Decade of Soul, , , , , , , , , , 
-2019-08-03,07:00 PM, , , , , , , , , ,Aaron Diehl Trio, 
-2019-08-03,07:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , ,Peter Bernstein + Gilad Hekselman, , , , , , 
-2019-08-03,08:00 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , , , 
-2019-08-03,08:30 PM, , , , , , , , , , , HAROLD MABERN TRIO 
-2019-08-03,09:00 PM, , , , , , , , , ,Aaron Diehl Trio, 
-2019-08-03,09:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , ,Peter Bernstein + Gilad Hekselman, , , , , , 
-2019-08-03,10:30 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , ,Aaron Diehl Trio, HAROLD MABERN TRIO 
-2019-08-03,11:15 PM, ,Late Night Session: The Ladybugs, , , , , , , , , 
-2019-08-03,11:30 PM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-08-03,12:45 AM, , , , , , , , , ,The Harlem Sessions hosted by Marc Cary, 
-2019-08-04,01:30 PM,Louis Armstrong Birthday Brunch featuring JOEY MORANT & CATFISH STEW, , , , , , , , , , 
-2019-08-04,07:00 PM, , , , , , , , , ,“Sunday Supper” with Cynthia Scott, 
-2019-08-04,07:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , , , , , , , , 
-2019-08-04,08:00 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , , , 
-2019-08-04,08:30 PM, , , , , , , , , , , HAROLD MABERN TRIO 
-2019-08-04,09:00 PM, , , , , , , , , ,“Sunday Supper” with Cynthia Scott, 
-2019-08-04,09:30 PM, ,Ben Wolfe Quintet featuring Randy Brecker (8/1-8/3) and Warren Wolf, , , , , , , , , 
-2019-08-04,10:30 PM,Avishai Cohen Trio with Shai Maestro & Mark Guiliana Gently Disturbed, , , , , , , , ,“Sunday Supper” with Cynthia Scott, HAROLD MABERN TRIO 
-2019-08-04,11:30 AM,Louis Armstrong Birthday Brunch featuring JOEY MORANT & CATFISH STEW, , , , , , , , , , 
-2019-08-05,07:30 PM, ,"Jazz House Kids, hosted by Christian McBride", , , , , , , , , 
-2019-08-05,08:00 PM,Ben Williams & Friends - Summer Residency, , , , , , , , , , 
-2019-08-05,08:30 PM, , , , , , , , , , , VANGUARD JAZZ ORCHESTRA
-2019-08-05,09:30 PM, ,"Jazz House Kids, hosted by Christian McBride", , , , , , , , , 
-2019-08-05,10:30 PM,Ben Williams & Friends - Summer Residency, , , , , , , , , , VANGUARD JAZZ ORCHESTRA
-2019-08-06,07:30 PM, ,Charenee Wade: Betty Carter at 90, , , , , , , , , 
-2019-08-06,08:00 PM,Nicholas Payton, , , , , , , , , , 
-2019-08-06,08:30 PM, , , , , , , , , , , Bill Frisell Trio
-2019-08-06,09:30 PM, ,Charenee Wade: Betty Carter at 90, , , , , , , , , 
-2019-08-06,10:30 PM,Nicholas Payton, , , , , , , , , , Bill Frisell Trio
-2019-08-06,11:15 PM, ,Late Night Session: Evan Sherman, , , , , , , , , 
-2019-08-07,07:30 PM, ,Charenee Wade: Betty Carter at 90, , , , , , , , , 
-2019-08-07,08:00 PM,Nicholas Payton, , , , , , , , , , 
-2019-08-07,08:30 PM, , , , , , , , , , , Bill Frisell Trio
-2019-08-07,09:30 PM, ,Charenee Wade: Betty Carter at 90, , , , , , , , , 
-2019-08-07,10:30 PM,Nicholas Payton, , , , , , , , , , Bill Frisell Trio
-2019-08-07,11:15 PM, ,Late Night Session: Evan Sherman, , , , , , , , , 
-2019-08-08,07:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-08,08:00 PM,Nicholas Payton, , , , , , , , , , 
-2019-08-08,08:30 PM, , , , , , , , , , , Bill Frisell Trio
-2019-08-08,09:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-08,10:30 PM,Nicholas Payton, , , , , , , , , , Bill Frisell Trio
-2019-08-09,07:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-09,08:00 PM,Nicholas Payton, , , , , , , , , , 
-2019-08-09,08:30 PM, , , , , , , , , , , Bill Frisell Trio
-2019-08-09,09:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-09,10:30 PM,Nicholas Payton, , , , , , , , , , Bill Frisell Trio
-2019-08-09,11:15 PM, ,Late Night Session: Evan Sherman, , , , , , , , , 
-2019-08-09,12:30 AM,Nicholas Payton, , , , , , , , , , 
-2019-08-10,07:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-10,08:00 PM,Nicholas Payton, , , , , , , , , , 
-2019-08-10,08:30 PM, , , , , , , , , , , Bill Frisell Trio
-2019-08-10,09:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-10,10:30 PM,Nicholas Payton, , , , , , , , , , Bill Frisell Trio
-2019-08-10,12:30 AM,Nicholas Payton, , , , , , , , , , 
-2019-08-10,NaT,Keiko Matsui @ Sony Hall8PM, , , , , , , , , , 
-2019-08-11,07:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-11,08:00 PM,Nicholas Payton, , , , , , , , , , 
-2019-08-11,08:30 PM, , , , , , , , , , , Bill Frisell Trio
-2019-08-11,09:30 PM, ,Victor Goines Quartet, , , , , , , , , 
-2019-08-11,10:30 PM,Nicholas Payton, , , , , , , , , , Bill Frisell Trio
-2019-08-12,08:00 PM,Ben Williams & Friends - Summer Residency, , , , , , , , , , 
-2019-08-12,08:30 PM, , , , , , , , , , , VANGUARD JAZZ ORCHESTRA
-2019-08-12,10:30 PM,Ben Williams & Friends - Summer Residency, , , , , , , , , , VANGUARD JAZZ ORCHESTRA
+date,start_time,Fat Cat (Cellar Dog),Village Vanguard
+2021-11-11,07:00 PM,  Grant Stewart Quartet, 
+2021-11-11,10:00 PM, , JAKOB BRO
+2021-11-12,07:00 PM,  Richard Clements Quartet, 
+2021-11-12,08:00 PM, , JAKOB BRO
+2021-11-12,10:00 PM, , JAKOB BRO
+2021-11-12,11:30 PM,  Jabba Quartet, 
+2021-11-13,07:00 PM,  Joe Farnsworth Quartet, 
+2021-11-13,08:00 PM, , JAKOB BRO
+2021-11-13,10:00 PM, , JAKOB BRO
+2021-11-13,11:30 PM,  Chris Flory Trio, 
+2021-11-14,07:00 PM,  Chris Byars Quartet, 
+2021-11-14,08:00 PM, , JAKOB BRO
+2021-11-14,10:00 PM, , JAKOB BRO
+2021-11-15,08:00 PM, , VANGUARD JAZZ ORCHESTRA 
+2021-11-15,10:00 PM, , VANGUARD JAZZ ORCHESTRA 
+2021-11-17,07:00 PM,  Ehud Asherie Trio, 
+2021-11-17,08:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-17,10:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-18,07:00 PM,  Martin Wind Quartet, 
+2021-11-18,08:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-18,10:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-19,07:00 PM,  Ed Cherry Trio, 
+2021-11-19,08:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-19,10:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-19,11:30 PM,  Pete Malinverni Quartet, 
+2021-11-20,07:00 PM,  Nick Biello Quartet, 
+2021-11-20,08:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-20,10:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-20,11:30 PM,  James Austin Quartet, 
+2021-11-21,07:00 PM,  Ned Goold Quartet, 
+2021-11-21,08:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-21,10:00 PM, , EMMET COHEN FEATURING RON CARTER
+2021-11-22,08:00 PM, , VANGUARD JAZZ ORCHESTRA 
+2021-11-22,10:00 PM, , VANGUARD JAZZ ORCHESTRA 
+2021-11-23,08:00 PM, , JASON MORAN & BANDWAGON
+2021-11-23,10:00 PM, , JASON MORAN & BANDWAGON
+2021-11-24,07:00 PM,  Saul Rubin Quartet, 
+2021-11-24,08:00 PM, , JASON MORAN & BANDWAGON
+2021-11-24,10:00 PM, , JASON MORAN & BANDWAGON
+2021-11-25,07:00 PM,  Jon Davis Trio, 
+2021-11-25,08:00 PM, , JASON MORAN & BANDWAGON
+2021-11-25,10:00 PM, , JASON MORAN & BANDWAGON
+2021-11-26,07:00 PM,  Itai Kriss and La Guaracharanga, 
+2021-11-26,08:00 PM, , JASON MORAN & BANDWAGON
+2021-11-26,10:00 PM, , JASON MORAN & BANDWAGON
+2021-11-26,11:30 PM,  Davis Whitfield Quartet, 
+2021-11-27,07:00 PM,  Cocomama, 
+2021-11-27,08:00 PM, , JASON MORAN & BANDWAGON
+2021-11-27,10:00 PM, , JASON MORAN & BANDWAGON
+2021-11-27,11:30 PM,  Nicole Glover Quartet, 
+2021-11-28,07:00 PM,  Jade Synstelien Quartet, 
+2021-11-28,08:00 PM, , JASON MORAN & BANDWAGON
+2021-11-28,10:00 PM, , JASON MORAN & BANDWAGON
+2021-11-29,08:00 PM, , VANGUARD JAZZ ORCHESTRA 
+2021-11-29,10:00 PM, , VANGUARD JAZZ ORCHESTRA 
+2021-11-30,08:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-11-30,10:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-01,08:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-01,10:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-02,08:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-02,10:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-03,08:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-03,10:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-04,08:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-04,10:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-05,08:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-05,10:00 PM, , CHRISTIAN McBRIDE: Inside Straight
+2021-12-06,08:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-06,10:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-07,08:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-07,10:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-08,08:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-08,10:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-09,08:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-09,10:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-10,08:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-10,10:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-11,08:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-11,10:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-12,08:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-12,10:00 PM, , CHRISTIAN McBRIDE’S: New Jawn Quartet
+2021-12-13,08:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-13,10:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-14,08:00 PM, , KENNY BARRON QUINTET
+2021-12-14,10:00 PM, , KENNY BARRON QUINTET
+2021-12-15,08:00 PM, , KENNY BARRON QUINTET
+2021-12-15,10:00 PM, , KENNY BARRON QUINTET
+2021-12-16,08:00 PM, , KENNY BARRON QUINTET
+2021-12-16,10:00 PM, , KENNY BARRON QUINTET
+2021-12-17,08:00 PM, , KENNY BARRON QUINTET
+2021-12-17,10:00 PM, , KENNY BARRON QUINTET
+2021-12-18,08:00 PM, , KENNY BARRON QUINTET
+2021-12-18,10:00 PM, , KENNY BARRON QUINTET
+2021-12-19,08:00 PM, , KENNY BARRON QUINTET
+2021-12-19,10:00 PM, , KENNY BARRON QUINTET
+2021-12-20,08:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-20,10:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-21,08:00 PM, , KENNY BARRON TRIO 
+2021-12-21,10:00 PM, , KENNY BARRON TRIO 
+2021-12-22,08:00 PM, , KENNY BARRON TRIO 
+2021-12-22,10:00 PM, , KENNY BARRON TRIO 
+2021-12-23,08:00 PM, , KENNY BARRON TRIO 
+2021-12-23,10:00 PM, , KENNY BARRON TRIO 
+2021-12-24,08:00 PM, , KENNY BARRON TRIO 
+2021-12-24,10:00 PM, , KENNY BARRON TRIO 
+2021-12-25,08:00 PM, , KENNY BARRON TRIO 
+2021-12-25,10:00 PM, , KENNY BARRON TRIO 
+2021-12-26,08:00 PM, , KENNY BARRON TRIO 
+2021-12-26,10:00 PM, , KENNY BARRON TRIO 
+2021-12-27,08:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-27,10:00 PM, , VANGUARD JAZZ ORCHESTRA
+2021-12-28,08:00 PM, , CHRIS POTTER QUARTET
+2021-12-28,10:00 PM, , CHRIS POTTER QUARTET
+2021-12-29,08:00 PM, , CHRIS POTTER QUARTET
+2021-12-29,10:00 PM, , CHRIS POTTER QUARTET
+2021-12-30,08:00 PM, , CHRIS POTTER QUARTET
+2021-12-30,10:00 PM, , CHRIS POTTER QUARTET
+2021-12-31,09:00 PM, , NYE: CHRIS POTTER QUARTET
+2021-12-31,11:00 PM, , NYE: CHRIS POTTER QUARTET
+2022-01-01,08:00 PM, , CHRIS POTTER QUARTET
+2022-01-01,10:00 PM, , CHRIS POTTER QUARTET
+2022-01-02,08:00 PM, , CHRIS POTTER QUARTET
+2022-01-02,10:00 PM, , CHRIS POTTER QUARTET

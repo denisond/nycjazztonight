@@ -1,4 +1,5 @@
 import requests
+import datetime as dt
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -6,6 +7,14 @@ import numpy as np
 import re
 from functools import reduce
 import json
+# from cellar_dog_scraper import cellar_dog_scraper
+
+#selenium packages
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 start = datetime.now()
 print('SCRAPER STARTING AT: {}'.format(start))
@@ -26,7 +35,7 @@ def birdland_scraper():
 
     df = pd.DataFrame(records, columns= ['date', 'time', 'Birdland Jazz Club'])
 
-    df['start_time'] = pd.to_datetime(df['time']).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['time']).datetime.strftime('%I:%M %p')
     df['date'] = pd.to_datetime(df['date'].apply(lambda x: x[3:]))
     df = (df.set_index(['date', 'start_time'])
             .drop('time', axis=1))
@@ -60,7 +69,7 @@ def bluenote_scraper():
     records_np[:,:2] = month_date
 
     df = pd.DataFrame(records_np, columns = ['month', 'day', 'showtime'])
-    df['start_time'] = pd.to_datetime(df['showtime'].apply(lambda x: '{}'.format(re.findall(r'\d{1,2}:\d{2}.M',x))[2:-2])).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['showtime'].apply(lambda x: '{}'.format(re.findall(r'\d{1,2}:\d{2}.M',x))[2:-2])).datetime.strftime('%I:%M %p')
     df['Bluenote'] = df['showtime'].apply(lambda x: re.sub('\d{1,2}:\d{2}.M','',x))
     df['date'] = pd.to_datetime(str(datetime.today().year) + '-' +(df['month'].apply(lambda x: str(x))) + '-' + df['day'], format = '%Y-%m-%d')
 
@@ -68,6 +77,71 @@ def bluenote_scraper():
             .drop(['showtime', 'month','day'], axis=1))
 
     return df
+
+def cellar_dog_scraper():
+
+    DRIVER_PATH = "/usr/local/bin/chromedriver"
+    URL = "https://www.cellardog.net/music"
+
+
+    s = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=s)
+    driver.get(URL)
+    calendar_data = driver.find_elements(By.XPATH, "//html")[0].text
+    driver.quit()
+
+    months_list = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ]
+
+    calendar_data_split = calendar_data.split("\n")
+    records = []
+    day = "0"
+    for t in calendar_data_split:
+        if t.strip()[:-5] in months_list:
+            year = t.strip()[-4:]
+            month = t.strip()[:-5]
+
+        if 0 < len(t.strip()) <= 2 and t.strip().isdigit():
+            day = t.strip()
+
+        elif re.findall("(\d+:?\d*?[ap])", t.lower()):
+            event = t.strip("\n")
+
+            start_time, artist = re.split("([0-9]{1,2}:?[0-9]{,2}?[ap]{1})", event)[-2:]
+            start_time = f"{start_time[:-1]} {start_time[-1]}m".upper()
+
+            if ":" not in start_time:
+                start_time = re.sub("( [AP]M)", ":00 \\1", start_time)
+
+            date_month = dt.datetime.strptime(month, "%B").month
+            date = f"{year}-{date_month}-{day}"
+
+            records.append([date, start_time, artist])
+
+        elif day == "0":
+            continue
+
+        else:
+            break
+
+    df = pd.DataFrame(records, columns=["date", "start_time", "Fat Cat (Cellar Dog)"])
+    df["date"] = pd.to_datetime(df["date"])
+    df["start_time"] = pd.to_datetime(df["start_time"]).dt.strftime("%I:%M %p")
+    df = df.set_index(["date", "start_time"])
+    return df
+
 
 
 def dizzys_scraper():
@@ -83,8 +157,8 @@ def dizzys_scraper():
             records.append((date_time, artist))
 
     df = pd.DataFrame(records, columns = ['datetime', 'Dizzy\'s'])
-    df['date'] = pd.to_datetime(df['datetime'] + ' ' + str(datetime.now().year)).dt.date
-    df['start_time'] = pd.to_datetime(df['datetime'] + ' ' + str(datetime.now().year)).dt.strftime('%I:%M %p')
+    df['date'] = pd.to_datetime(df['datetime'] + ' ' + str(datetime.now().year)).datetime.date
+    df['start_time'] = pd.to_datetime(df['datetime'] + ' ' + str(datetime.now().year)).datetime.strftime('%I:%M %p')
     df = df.sort_values(['date','start_time'])
     df = (df.set_index(['date','start_time'])
             .drop(['datetime'], axis=1))
@@ -107,37 +181,15 @@ def django_scraper():
 
     df['date'] = pd.to_datetime(df['date'].apply(lambda x: x.split(' ',1)[1] + ', {}'.format(datetime.now().year)))
 
-
     df['event_time2'] = df['event_time'].apply(lambda x: '{}'.format(re.findall('(\d*:?\d+?\s*[ap]m)',x.lower())[0]) if len(re.findall('(\d*:?\d+?\s*[ap]m)',x.lower())) > 0 else None)
     df.dropna(inplace= True)
-    df['start_time'] = pd.to_datetime(df['event_time2'].apply(lambda x: (re.findall('\d+',x)[0] + ':00' + x[-2:]).replace(" ", "") if not ":" in x else x.replace(" ", ""))).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['event_time2'].apply(lambda x: (re.findall('\d+',x)[0] + ':00' + x[-2:]).replace(" ", "") if not ":" in x else x.replace(" ", ""))).datetime.strftime('%I:%M %p')
     df['Django'] = df['event_time'].apply(lambda x: re.sub('(\d*:?\d+?\s*[AP]M)','',x,flags=re.IGNORECASE))
     df = (df.set_index(['date','start_time'])
             .drop(['event_time', 'event_time2'], axis=1))
 
     return df
 
-
-def fatcat_scraper():
-    r = requests.get('http://www.fatcatmusic.org/music1.html')
-    soup = BeautifulSoup(r.text, 'html.parser')
-
-
-    dates_fc = [result.text for result in soup.find_all('table',{'width':'100%'})[0].find_all('td',{'class':'date'})]
-    times_fc   = [result.text for result in soup.find_all('table',{'width':'100%'})[0].find_all('td',{'class':'bodycopy'})[::2]]
-    artists_fc = [result.text for result in soup.find_all('table',{'width':'100%'})[0].find_all('td',{'class':'bodycopy'})[1::2]]
-
-    dates_clean_fc = sorted(list(map(lambda x: re.findall('\d+\/\d+',x)[0],dates_fc*3)))
-
-    records=list(zip(dates_clean_fc, times_fc, artists_fc))
-
-    df = pd.DataFrame(records, columns = ['date', 'time', 'Fat Cat'])
-    df['start_time'] = pd.to_datetime(df['time'].apply(lambda x: (re.findall('\d+',x)[0] + ':00' + x[-2:]).replace(" ", "") if not ":" in x else x.replace(" ", ""))).dt.strftime('%I:%M %p')
-    df['date'] = pd.to_datetime(df['date'] + '/{}'.format(datetime.now().year))
-    df = (df.set_index(['date','start_time'])
-            .drop('time', axis=1))
-
-    return df
 
 def jazzgallery_scraper():
     r = requests.get('https://www.etix.com/ticket/v/3525/the-jazz-gallery')
@@ -152,7 +204,7 @@ def jazzgallery_scraper():
         records.append((date, time, artist))
 
     df = pd.DataFrame(records, columns = ['date_temp','time_temp', 'Jazz Gallery'])
-    df['start_time'] = pd.to_datetime(df['time_temp'].apply(lambda x: ' '.join(x.split(' ', -1)[-2:]))).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['time_temp'].apply(lambda x: ' '.join(x.split(' ', -1)[-2:]))).datetime.strftime('%I:%M %p')
     df['date'] = pd.to_datetime(df['date_temp'] + ' ' + str(datetime.now().year))
 
     df = df.sort_values(['date','start_time'])
@@ -161,23 +213,6 @@ def jazzgallery_scraper():
 
     return df
 
-def jazzstandard_scraper():
-    r = requests.get('https://www.ticketweb.com/venue/jazz-standard-new-york-ny/19760')
-    soup = BeautifulSoup(r.text, 'html.parser')
-    main = soup.find('div',{'class':'section-body'})
-    events = main.find_all('li', {'class':'media theme-mod'})
-    records = []
-    for i in events:
-        event = i.find('p',{'class':'event-name theme-title'}).find('a').text
-        time = i.find('p',{'class':'event-date theme-subTitle'}).text[25:-20]
-        records.append((time,event))
-    df= pd.DataFrame(records,columns = ['datetime','Jazz Standard'])
-    df['start_time'] = pd.to_datetime(df.datetime.apply(lambda x: x[3:].rsplit('\n',1)[0]).apply(lambda x: x.rsplit('(',1)[0])+ ', {}'.format(datetime.now().year)).dt.strftime('%I:%M %p')
-    df['date'] = pd.to_datetime(df.datetime.apply(lambda x: x[3:].rsplit('\n',1)[0]).apply(lambda x: x.rsplit('(',1)[0])+ ', {}'.format(datetime.now().year)).apply(lambda x: x.date())
-    df = (df.set_index(['date','start_time'])
-            .drop(['datetime'], axis=1))
-
-    return df
 
 def kitano_scraper():
     r = requests.get('https://www.instantseats.com/index.cfm?fuseaction=home.venue&VenueID=147')
@@ -194,7 +229,7 @@ def kitano_scraper():
 
     df = pd.DataFrame(records, columns = ['date', 'time', 'Kitano'])
     df['date'] = pd.to_datetime(df['date'].apply(lambda x: x.replace('.', "/")) + '/'+ '{}'.format(datetime.now().year))
-    df['start_time'] = pd.to_datetime(df['time']).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['time']).datetime.strftime('%I:%M %p')
     df = (df.set_index(['date','start_time'])
             .drop(['time'], axis=1))
 
@@ -205,7 +240,7 @@ def mezzrow_scraper():
     r = requests.get('https://www.mezzrow.com/')
     soup = BeautifulSoup(r.text, 'html.parser')
     main = soup.find_all('dl')[0]
-    results = main.find_all(['dd','dt'])
+    results = main.find_all(['dd','datetime'])
     records = []
     date = ''
     time = ''
@@ -220,7 +255,7 @@ def mezzrow_scraper():
             records.append((date, time, event))
 
     df = pd.DataFrame(records, columns = ['date', 'time', 'Mezzrow'])        
-    df['start_time'] = pd.to_datetime(df['time'].apply(lambda x: re.findall('(\d*:?\d+?\s*[ap]m)',x.lower())[0])).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['time'].apply(lambda x: re.findall('(\d*:?\d+?\s*[ap]m)',x.lower())[0])).datetime.strftime('%I:%M %p')
 
     df['date'] = pd.to_datetime(df['date'])
     df = (df.set_index(['date','start_time'])
@@ -228,41 +263,6 @@ def mezzrow_scraper():
 
     return df
 
-def seventyfive_scraper():
-    r = requests.get('https://www.the75clubnyc.com/')
-    soup = BeautifulSoup(r.text, 'html.parser')
-    main = soup.find('div', {'class':'qode-workflow'})
-    shows = main.find_all('div',{'class':'qode-workflow-text'})
-    records = []
-    for i in shows:
-        day = i.find('h4').text.rsplit(' ',-1)[-1]
-        name = i.find('h3',{'class':'qode-workflow-subtitle'}).text
-        for j in ['08:00 PM', '9:30 PM']:
-            time = j
-            records.append((day,time,name))
-
-    month = datetime.now().month
-    records_np = np.array(records)
-    month_ary = [month]
-    for i in range(1,len(records_np)):
-
-        if int(records_np[i-1,0]) > 25 and int(records_np[i,0]) < 5:
-            month += 1
-            month %= 13
-            if month ==0:
-                month = 1
-            month_ary.append(month)
-        else:
-            month_ary.append(month)
-
-    records3 = np.insert(records_np, 0, month_ary, axis=1)
-    df = pd.DataFrame(records3, columns = ['month', 'day', 'time', '75 Club'])
-    df['date'] = pd.to_datetime((df['month'] + "/"+ df['day']).apply(lambda x: x + '/'+ '{}'.format(datetime.now().year)))
-    df['start_time'] = pd.to_datetime(df['time'].apply(lambda x: (re.findall('\d+',x)[0] + ':00' +  x[-2:]).replace(" ", "") if ":" not in x else x.replace(" ", ""))).dt.strftime('%I:%M %p')
-    df = (df.sort_values(['date','start_time']).set_index(['date','start_time'])
-        .drop(['month','day','time'], axis=1))
-
-    return df
 
 def smalls_scraper():
     r = requests.get('https://www.smallslive.com/events/calendar/')
@@ -273,14 +273,14 @@ def smalls_scraper():
 
     for result in results_days:        
         date = result.contents[0].text 
-        for i in range(len(result.find_all('dt'))):
+        for i in range(len(result.find_all('datetime'))):
             name = result.find_all('a')[i].text            
-            time = result.find_all('dt')[i].text            
+            time = result.find_all('datetime')[i].text            
             records.append((date,time,name))
 
     df = pd.DataFrame(records, columns = ['date', 'time', 'Smalls Jazz Club'])
 
-    df['start_time'] = pd.to_datetime(df['time'].apply(lambda x: x[:8])).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['time'].apply(lambda x: x[:8])).datetime.strftime('%I:%M %p')
     df['date'] = pd.to_datetime(df['date'])
 
     df = (df.set_index(['date','start_time'])
@@ -316,7 +316,7 @@ def smoke_scraper():
             records2.append(j)
 
     df = pd.DataFrame(records2, columns = ['date', 'time', 'Smoke Bar'])
-    df['start_time'] = pd.to_datetime(df['time']).dt.strftime('%I:%M %p')
+    df['start_time'] = pd.to_datetime(df['time']).datetime.strftime('%I:%M %p')
     df['date'] = pd.to_datetime(df['date'])
     df = (df.set_index(['date','start_time'])
             .drop('time', axis=1))
@@ -328,7 +328,7 @@ def villagevanguard_scraper():
     r = requests.get('https://www.squadup.com/api/v3/events?user_ids=4158761&page_size=200&additional_attr=sold_out&include=custom_fields')
     data = json.loads(r.text)
 
-    shows = [i['name'].split('-',1)[1] for i in data['events']]
+    shows = [i['name'].split('-',1)[1].strip("\n") for i in data['events']]
     date = [i['start_at'].split('T',1)[0] for i in data['events']]
     time = [i['start_at'].split('T',1)[1].split('-',1)[0] for i in data['events']]
     records = list(zip(date,time,shows))
@@ -373,7 +373,7 @@ def zinc_scraper():
 
     df = pd.DataFrame(records2, columns = ['date', 'time', 'Zinc Bar'])
     df['start_time'] = pd.to_datetime(df['time'].apply(lambda x: (re.findall('\d+',x)[0] + ':00' +  x[-2:]).replace(" ", "") 
-                                                       if ":" not in x else x.replace(" ", ""))).dt.strftime('%I:%M %p')
+                                                       if ":" not in x else x.replace(" ", ""))).datetime.strftime('%I:%M %p')
     df['date'] = pd.to_datetime(df['date'])
     df = (df.set_index(['date','start_time'])
             .drop('time', axis=1))
@@ -386,18 +386,23 @@ def zinc_scraper():
 """
 Create datasets
 """
-scrapers = [birdland_scraper, bluenote_scraper, dizzys_scraper, django_scraper, fatcat_scraper, 
-            jazzgallery_scraper, jazzstandard_scraper, kitano_scraper, mezzrow_scraper, 
-            seventyfive_scraper, smalls_scraper, smoke_scraper, villagevanguard_scraper, zinc_scraper]
-data_frames = []
+scrapers = [birdland_scraper, bluenote_scraper,  cellar_dog_scraper, dizzys_scraper, django_scraper, kitano_scraper, 
+mezzrow_scraper,  smalls_scraper, smoke_scraper, villagevanguard_scraper]
+data_frames = {}
 
+# cellar_dog_scraper()
 for scraper in scrapers:
     try:
-        data_frames.append(scraper())
+        data_frames[f'{scraper.__name__}'] = scraper()
     except:
+        # print(e)
         print('{} CRASHED!'.format(scraper).upper())
-        
-full_df = reduce(lambda  left,right: pd.merge(left,right,on=['date','start_time'], how='outer'), data_frames).sort_values(['date', 'start_time'])
+
+for k, v in data_frames.copy().items():
+    if len(v) == 0:
+        data_frames.pop(k)
+
+full_df = reduce(lambda  left,right: pd.merge(left,right,on=['date','start_time'], how='outer'), [*data_frames.values()]).sort_values(['date', 'start_time'])
 final_df = full_df.loc[datetime.today() - timedelta(days = 1):]
 
 # filter NaNs
@@ -405,8 +410,8 @@ final_df = final_df.astype('object').fillna(" ").iloc[:350]
 
 # added utf-8 encoding to fix write error on ubuntu
 final_df.to_csv('schedule.csv', encoding='utf-8')
+final_df.to_html('schedule.html')
 
 finish = datetime.now()
 print('SCRAPER FINISHED AT: {}'.format(finish))
-
 print('TIME ELAPSED: {}'.format(finish - start))
