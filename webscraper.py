@@ -182,43 +182,36 @@ def dizzys_scraper():
 
 
 def django_scraper():
-    r = requests.get("http://www.thedjangonyc.com/schedule/")
+    r = requests.get("https://www.thedjangonyc.com/events/")
     soup = BeautifulSoup(r.text, "html.parser")
-    main = soup.find_all("div", {"class": "day"})
+
+    for s in soup:
+        if soup.find("div"):
+            results_days = soup.find_all("div", {"class": "grid__listings--group"})
+
     records = []
-    for i in main:
-        date = i.find("div", {"class": "day-name"}).text
-        for j in i.find_all("div", {"class": "event"}):
-            event = j.find("div", {"class": "event-title"}).text
-            if len(event) > 1:  # So we don't include events that are empty st strings
-                records.append((date, event))
-    df = pd.DataFrame(records, columns=["date", "event_time"])
+    for results_day in results_days:
+        date_raw = results_day.get("data-date")
+        dto = dt.datetime.strptime(date_raw, "%Y-%m-%d")
+        date = dto.strftime("%Y-%m-%d")
 
-    df["date"] = pd.to_datetime(
-        df["date"].apply(
-            lambda x: x.split(" ", 1)[1] + ", {}".format(datetime.now().year)
-        )
-    )
+        for event in results_day.find_all("article"):
+            artist = event.find("h3", {"class": "event__title"}).text.strip("\n")
+            date_time_raw = event.find("p", {"class": "event__info"}).text.strip("\n")
+            
+            times = re.findall("(\d*:?\d+?\s*[AP]M)", date_time_raw)
+            if "-" in date_time_raw:
+                times = [times[0]]
 
-    df["event_time2"] = df["event_time"].apply(
-        lambda x: "{}".format(re.findall("(\d*:?\d+?\s*[ap]m)", x.lower())[0])
-        if len(re.findall("(\d*:?\d+?\s*[ap]m)", x.lower())) > 0
-        else None
+            for start_time in times:
+                records.append([date, start_time, artist])
+
+    df = pd.DataFrame(records, columns=["date", "time", "Django"])
+    df["start_time"] = pd.to_datetime(df["time"], format="%I:%M%p").dt.strftime(
+        "%I:%M %p"
     )
-    df.dropna(inplace=True)
-    df["start_time"] = pd.to_datetime(
-        df["event_time2"].apply(
-            lambda x: (re.findall("\d+", x)[0] + ":00" + x[-2:]).replace(" ", "")
-            if not ":" in x
-            else x.replace(" ", "")
-        )
-    ).datetime.strftime("%I:%M %p")
-    df["Django"] = df["event_time"].apply(
-        lambda x: re.sub("(\d*:?\d+?\s*[AP]M)", "", x, flags=re.IGNORECASE)
-    )
-    df = df.set_index(["date", "start_time"]).drop(
-        ["event_time", "event_time2"], axis=1
-    )
+    df["date"] = pd.to_datetime(df["date"])
+    df = df.set_index(["date", "start_time"]).drop("time", axis=1)
 
     return df
 
@@ -284,24 +277,26 @@ def mezzrow_scraper():
 
     records = []
     for results_day in results_days:
-        date_raw = results_day.find('div',{'class':'title1'}).get('data-date')
-        dto = dt.datetime.strptime(date_raw,'%b. %d, %Y')
-        date = dto.strftime('%Y-%m-%d')
-        
-        for event in results_day.find_all('div', {'class':'flex-column day-event'}):
-            event_list = event.find_all('div')
+        date_raw = results_day.find("div", {"class": "title1"}).get("data-date")
+        dto = dt.datetime.strptime(date_raw, "%b. %d, %Y")
+        date = dto.strftime("%Y-%m-%d")
+
+        for event in results_day.find_all("div", {"class": "flex-column day-event"}):
+            event_list = event.find_all("div")
             club = event_list[0].text.strip()
-            start_times = re.findall('(\d*:?\d+?\s*[AP]M)', event_list[1].text.strip()) 
+            start_times = re.findall("(\d*:?\d+?\s*[AP]M)", event_list[1].text.strip())
             artist = event_list[2].text.strip()
 
             for time in start_times:
                 records.append([date, club, time, artist])
-                
-    df = pd.DataFrame(records, columns = ['date', 'club', 'start_time', 'Mezzrow'])
-    df['date'] = pd.to_datetime(df['date'])
-    df['start_time'] = pd.to_datetime(df['start_time']).dt.strftime('%I:%M %p')
-    df = df.loc[df['club'] == 'Mezzrow',].drop(columns=['club'])
-    df = (df.set_index(['date','start_time']))
+
+    df = pd.DataFrame(records, columns=["date", "club", "start_time", "Mezzrow"])
+    df["date"] = pd.to_datetime(df["date"])
+    df["start_time"] = pd.to_datetime(df["start_time"]).dt.strftime("%I:%M %p")
+    df = df.loc[
+        df["club"] == "Mezzrow",
+    ].drop(columns=["club"])
+    df = df.set_index(["date", "start_time"])
 
     return df
 
@@ -313,24 +308,26 @@ def smalls_scraper():
 
     records = []
     for results_day in results_days:
-        date_raw = results_day.find('div',{'class':'title1'}).get('data-date')
-        dto = dt.datetime.strptime(date_raw,'%b. %d, %Y')
-        date = dto.strftime('%Y-%m-%d')
-        
-        for event in results_day.find_all('div', {'class':'flex-column day-event'}):
-            event_list = event.find_all('div')
+        date_raw = results_day.find("div", {"class": "title1"}).get("data-date")
+        dto = dt.datetime.strptime(date_raw, "%b. %d, %Y")
+        date = dto.strftime("%Y-%m-%d")
+
+        for event in results_day.find_all("div", {"class": "flex-column day-event"}):
+            event_list = event.find_all("div")
             club = event_list[0].text.strip()
-            start_times = re.findall('(\d*:?\d+?\s*[AP]M)', event_list[1].text.strip()) 
+            start_times = re.findall("(\d*:?\d+?\s*[AP]M)", event_list[1].text.strip())
             artist = event_list[2].text.strip()
 
             for time in start_times:
                 records.append([date, club, time, artist])
-                
-    df = pd.DataFrame(records, columns = ['date', 'club', 'start_time', 'Smalls'])
-    df['date'] = pd.to_datetime(df['date'])
-    df['start_time'] = pd.to_datetime(df['start_time']).dt.strftime('%I:%M %p')
-    df = df.loc[df['club'] == 'Smalls',].drop(columns = ['club'])
-    df = (df.set_index(['date','start_time']))
+
+    df = pd.DataFrame(records, columns=["date", "club", "start_time", "Smalls"])
+    df["date"] = pd.to_datetime(df["date"])
+    df["start_time"] = pd.to_datetime(df["start_time"]).dt.strftime("%I:%M %p")
+    df = df.loc[
+        df["club"] == "Smalls",
+    ].drop(columns=["club"])
+    df = df.set_index(["date", "start_time"])
 
     return df
 
