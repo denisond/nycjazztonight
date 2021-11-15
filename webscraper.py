@@ -45,48 +45,41 @@ def birdland_scraper():
 
 
 def bluenote_scraper():
-    r = requests.get("http://www.bluenotejazz.com/newyork/schedule/printable.shtml")
-    soup = BeautifulSoup(r.text, "html.parser")
     records = []
-    month = datetime.now().month
-    for k, v in enumerate(soup.find_all("td", {"class": "show"})):
-        if v.find("p"):
-            date = soup.find_all("td", {"class": "date"})[k].text
-            for show in v.find_all("p"):
-                records.append(list((month, date, show.text)))
-    records_np = np.array(records)
-    month_ary = [month]
-    for i in range(len(records_np) - 1):
-        if int(records_np[i, 1]) > int(records_np[i + 1, 1]):
-            month += 1
-            month %= 13
-            if month == 0:
-                month = 1
-            month_ary.append(month)
-        else:
-            month_ary.append(month)
-
-    month_date = np.array(list(zip(month_ary, records_np[:, 1])))
-    records_np[:, :2] = month_date
-
-    df = pd.DataFrame(records_np, columns=["month", "day", "showtime"])
-    df["start_time"] = pd.to_datetime(
-        df["showtime"].apply(
-            lambda x: "{}".format(re.findall(r"\d{1,2}:\d{2}.M", x))[2:-2]
+    for i in range(1, 4):
+        r = requests.get(
+            "https://www.ticketweb.com/venue/blue-note-jazz-club-new-york-ny/23798?REFID=tempsite&pl=bluenoteny&page={}".format(
+                i
+            )
         )
-    ).datetime.strftime("%I:%M %p")
-    df["Bluenote"] = df["showtime"].apply(lambda x: re.sub("\d{1,2}:\d{2}.M", "", x))
-    df["date"] = pd.to_datetime(
-        str(datetime.today().year)
-        + "-"
-        + (df["month"].apply(lambda x: str(x)))
-        + "-"
-        + df["day"],
-        format="%Y-%m-%d",
-    )
+        soup = BeautifulSoup(r.text, "html.parser")
+        main = soup.find("div", {"class": "section-body"})
+        events = main.find_all("li", {"class": "media theme-mod"})
+        year = dt.datetime.now().year
+        month = dt.datetime.now().month
 
-    df = df.set_index(["date", "start_time"]).drop(["showtime", "month", "day"], axis=1)
+        for i in events:
+            event = i.find("p", {"class": "event-name theme-title"}).find("a").text
+            time_raw = i.find("p", {"class": "event-date theme-subTitle"}).text.strip()
+            start_time = re.findall("(\d*:?\d+?\s*[AP]M)", time_raw)[0]
 
+            date_raw = re.findall("(\w{3} \d{1,2})", time_raw)[0] + " " + str(year)
+            dto = dt.datetime.strptime(date_raw, "%b %d %Y")
+
+            if dto.month == 1 and month > 1:
+                year += 1
+                date_raw = re.findall("(\w{3} \d{1,2})", time_raw)[0] + " " + str(year)
+                dto = dt.datetime.strptime(date_raw, "%b %d %Y")
+                month = 1
+            date = dto.strftime("%Y-%m-%d")
+
+            records.append([date, start_time, event])
+
+    df = pd.DataFrame(records, columns=["date", "start_time", "Blue Note"])
+
+    df["start_time"] = pd.to_datetime(df["start_time"]).dt.strftime("%I:%M %p")
+    df["date"] = pd.to_datetime(df["date"])
+    df = df.set_index(["date", "start_time"])
     return df
 
 
@@ -155,29 +148,94 @@ def cellar_dog_scraper():
 
 
 def dizzys_scraper():
-    r = requests.get("https://www.jazz.org/dizzys/")
+    r = requests.get("https://2021.jazz.org/dizzys-club")
     soup = BeautifulSoup(r.text, "html.parser")
-    main = soup.find("div", {"class": "container container-md-height"})
-    shows = main.find_all(
-        "div", {"class": "col-sm-4 col-md-height feature-hover-container"}
-    )
+    main = soup.select('a[href*="https://2021.jazz.org/"]')
+
+    year = dt.datetime.now().year
+    month = dt.datetime.now().month
+    group_name = ""
+    ds = ""
+
     records = []
-    for show in shows:
-        artist = show.find("span", {"class": "overlay"}).text
-        for time in show.find_all("option"):
-            date_time = time.text
-            records.append((date_time, artist))
+    for artist in main[1:]:
 
-    df = pd.DataFrame(records, columns=["datetime", "Dizzy's"])
-    df["date"] = pd.to_datetime(
-        df["datetime"] + " " + str(datetime.now().year)
-    ).datetime.date
-    df["start_time"] = pd.to_datetime(
-        df["datetime"] + " " + str(datetime.now().year)
-    ).datetime.strftime("%I:%M %p")
-    df = df.sort_values(["date", "start_time"])
-    df = df.set_index(["date", "start_time"]).drop(["datetime"], axis=1)
+        for date in artist.parent.parent.parent.find_all(
+            "h4", {"data-preserve-html-node": "true"}
+        ):
+            if date != []:
+                dates_tuples = re.findall("(\w{3} \d{1,2})(.{1}\d{1,2})?", date.text)
+                dates_str = date.text
 
+        for group in artist.parent.parent.parent.select(
+            "h3", {"data-preserve-html-node": "true"}
+        ):
+            if group != []:
+                group_name = group.text
+
+        # create list of dates if we have range,i.e., contains '-'
+        artist_days = []
+        for date_tup in dates_tuples:
+            month = date_tup[0][:4]
+            date_range = date_tup[0] + date_tup[1]
+
+            if "–" in date_range:
+                days_L, days_H = re.findall("\d+", date_range)
+
+                event_days = [
+                    month + str(day) for day in range(int(days_L), int(days_H) + 1)
+                ]
+                artist_days.append(event_days)
+
+            else:
+                date_range = date_tup[0] + date_tup[1]
+                artist_days.append([date_range])
+
+        # split times where two dates present
+        if len(dates_tuples) > 1:
+            date_time_split = dates_str.split(dates_tuples[-1][0])
+        else:
+            date_time_split = [dates_str]
+
+        event_times = []
+        for time_str in date_time_split:
+            event_times.append(re.findall("(\d+:?\d*[ap]m)", time_str))
+
+        event_times_length = len(event_times)
+        missing_time = 0
+        for time in event_times:
+            if time == []:
+                missing_time = 1
+        if missing_time:
+            event_times = [time for i in range(event_times_length)]
+
+        for i, day_group in enumerate(artist_days):
+            for j, time_group in enumerate(event_times):
+                if i == j:
+                    for day in day_group:
+                        for time in time_group:
+                            date_raw = day + " " + str(year)
+                            dto = dt.datetime.strptime(date_raw, "%b %d %Y")
+
+                            if dto.month == 1 and month > 1:
+                                year += 1
+                                date_raw = date_raw + " " + str(year)
+                                dto = dt.datetime.strptime(date_raw, "%b %d %Y")
+                                month = 1
+
+                            date = dto.strftime("%Y-%m-%d")
+                            start_time = (
+                                f"{time.strip()[:-2]} {time.strip()[-2]}m".upper()
+                            )
+                            if ":" not in start_time:
+                                start_time = re.sub("( [AP]M)", ":00\\1", start_time)
+
+                            records.append([date, start_time, group_name])
+
+    df = pd.DataFrame(records, columns=["date", "start_time", "Dizzy's"])
+    df["start_time"] = pd.to_datetime(df["start_time"]).dt.strftime("%I:%M %p")
+    df["date"] = pd.to_datetime(df["date"])
+    df = df.set_index(["date", "start_time"])
     return df
 
 
@@ -198,7 +256,7 @@ def django_scraper():
         for event in results_day.find_all("article"):
             artist = event.find("h3", {"class": "event__title"}).text.strip("\n")
             date_time_raw = event.find("p", {"class": "event__info"}).text.strip("\n")
-            
+
             times = re.findall("(\d*:?\d+?\s*[AP]M)", date_time_raw)
             if "-" in date_time_raw:
                 times = [times[0]]
