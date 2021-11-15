@@ -278,30 +278,30 @@ def kitano_scraper():
 
 
 def mezzrow_scraper():
-    r = requests.get("https://www.mezzrow.com/")
+    r = requests.get("https://www.smallslive.com/events/calendar/")
     soup = BeautifulSoup(r.text, "html.parser")
-    main = soup.find_all("dl")[0]
-    results = main.find_all(["dd", "datetime"])
+    results_days = soup.select('div[class*="flex-column day-list"]')
+
     records = []
-    date = ""
-    time = ""
-    event = ""
-    for k, i in enumerate(results):
-        if 'class="purple"' in str(i):
-            date = i.text
-        if 'class="orange event' in str(i):
-            time = i.text
-        if 'class="event"' in str(i):
-            event = i.find("a").text
-            records.append((date, time, event))
+    for results_day in results_days:
+        date_raw = results_day.find('div',{'class':'title1'}).get('data-date')
+        dto = dt.datetime.strptime(date_raw,'%b. %d, %Y')
+        date = dto.strftime('%Y-%m-%d')
+        
+        for event in results_day.find_all('div', {'class':'flex-column day-event'}):
+            event_list = event.find_all('div')
+            club = event_list[0].text.strip()
+            start_times = re.findall('(\d*:?\d+?\s*[AP]M)', event_list[1].text.strip()) 
+            artist = event_list[2].text.strip()
 
-    df = pd.DataFrame(records, columns=["date", "time", "Mezzrow"])
-    df["start_time"] = pd.to_datetime(
-        df["time"].apply(lambda x: re.findall("(\d*:?\d+?\s*[ap]m)", x.lower())[0])
-    ).datetime.strftime("%I:%M %p")
-
-    df["date"] = pd.to_datetime(df["date"])
-    df = df.set_index(["date", "start_time"]).drop("time", axis=1)
+            for time in start_times:
+                records.append([date, club, time, artist])
+                
+    df = pd.DataFrame(records, columns = ['date', 'club', 'start_time', 'Mezzrow'])
+    df['date'] = pd.to_datetime(df['date'])
+    df['start_time'] = pd.to_datetime(df['start_time']).dt.strftime('%I:%M %p')
+    df = df.loc[df['club'] == 'Mezzrow',].drop(columns=['club'])
+    df = (df.set_index(['date','start_time']))
 
     return df
 
@@ -309,25 +309,28 @@ def mezzrow_scraper():
 def smalls_scraper():
     r = requests.get("https://www.smallslive.com/events/calendar/")
     soup = BeautifulSoup(r.text, "html.parser")
-    results_days = soup.select('div[class*="day flex"]')
+    results_days = soup.select('div[class*="flex-column day-list"]')
 
     records = []
+    for results_day in results_days:
+        date_raw = results_day.find('div',{'class':'title1'}).get('data-date')
+        dto = dt.datetime.strptime(date_raw,'%b. %d, %Y')
+        date = dto.strftime('%Y-%m-%d')
+        
+        for event in results_day.find_all('div', {'class':'flex-column day-event'}):
+            event_list = event.find_all('div')
+            club = event_list[0].text.strip()
+            start_times = re.findall('(\d*:?\d+?\s*[AP]M)', event_list[1].text.strip()) 
+            artist = event_list[2].text.strip()
 
-    for result in results_days:
-        date = result.contents[0].text
-        for i in range(len(result.find_all("datetime"))):
-            name = result.find_all("a")[i].text
-            time = result.find_all("datetime")[i].text
-            records.append((date, time, name))
-
-    df = pd.DataFrame(records, columns=["date", "time", "Smalls Jazz Club"])
-
-    df["start_time"] = pd.to_datetime(
-        df["time"].apply(lambda x: x[:8])
-    ).datetime.strftime("%I:%M %p")
-    df["date"] = pd.to_datetime(df["date"])
-
-    df = df.set_index(["date", "start_time"]).drop("time", axis=1)
+            for time in start_times:
+                records.append([date, club, time, artist])
+                
+    df = pd.DataFrame(records, columns = ['date', 'club', 'start_time', 'Smalls'])
+    df['date'] = pd.to_datetime(df['date'])
+    df['start_time'] = pd.to_datetime(df['start_time']).dt.strftime('%I:%M %p')
+    df = df.loc[df['club'] == 'Smalls',].drop(columns = ['club'])
+    df = (df.set_index(['date','start_time']))
 
     return df
 
