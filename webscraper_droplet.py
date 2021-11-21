@@ -8,9 +8,8 @@ import re
 from functools import reduce
 import json
 
-# from cellar_dog_scraper import cellar_dog_scraper
-
 # selenium packages
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -85,14 +84,8 @@ def bluenote_scraper():
 
 def cellar_dog_scraper():
 
-    DRIVER_PATH = "/usr/local/bin/chromedriver"
+    DRIVER_PATH = "/usr/bin/chromedriver"
     URL = "https://www.cellardog.net/music"
-
-    s = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=s)
-    driver.get(URL)
-    calendar_data = driver.find_elements(By.XPATH, "//html")[0].text
-    driver.quit()
 
     months_list = [
         "January",
@@ -109,37 +102,69 @@ def cellar_dog_scraper():
         "December",
     ]
 
+    # setup window and driver
+    display = Display(visible=0, size=(1920, 1080))
+    display.start()
+
+    options = Options()
+    options.add_argument("--no-sandbox")
+    options.add_argument("--headless")
+    s = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=s, options=options)
+    driver.get(URL)
+    driver.set_window_size(1920, 1080)
+
+    # scrape data
+    calendar_data = driver.find_elements(By.XPATH, "//html")[0].text
+
+    driver.quit()
+    display.stop()
+
+    # parse data and build df
     calendar_data_split = calendar_data.split("\n")
     records = []
-    day = "0"
 
+    # get first day of data
+    is_weekend = None
     for t in calendar_data_split:
+        if 0 < len(t.strip()) <= 2 and t.strip().isdigit():
+            day = int(t.strip())
+        elif re.findall("(\d+:?\d*?[ap])", t.lower()):
+            break
+
+    # loop through data and create df
+    for t in calendar_data_split:
+
+        if "Friday & Saturday nights performances until 2AM" in t.strip():
+            break
+
         if t.strip()[:-5] in months_list:
             year = t.strip()[-4:]
             month = t.strip()[:-5]
-
-        if 0 < len(t.strip()) <= 2 and t.strip().isdigit():
-            day = t.strip()
 
         elif re.findall("(\d+:?\d*?[ap])", t.lower()):
             event = t.strip("\n")
 
             start_time, artist = re.split("([0-9]{1,2}:?[0-9]{,2}?[ap]{1})", event)[-2:]
             start_time = f"{start_time[:-1]} {start_time[-1]}m".upper()
-
             if ":" not in start_time:
                 start_time = re.sub("( [AP]M)", ":00 \\1", start_time)
 
             date_month = dt.datetime.strptime(month, "%B").month
             date = f"{year}-{date_month}-{day}"
 
-            records.append([date, start_time, artist])
+            records.append([date, start_time, artist.strip()])
 
-        elif day == "0":
-            continue
-
-        else:
-            break
+            dt_date = dt.datetime(int(year), int(date_month), int(day))
+            if dt_date.weekday() in [4, 5]:
+                is_weekend = 1
+                if "11:30 PM" in start_time:
+                    day += 1
+            elif dt_date.weekday() == 6:
+                day += 3
+                is_weekend = 0
+            else:
+                day += 1
 
     df = pd.DataFrame(records, columns=["date", "start_time", "Fat Cat (Cellar Dog)"])
     df["date"] = pd.to_datetime(df["date"])
@@ -509,7 +534,6 @@ scrapers = [
 ]
 data_frames = {}
 
-# cellar_dog_scraper()
 for scraper in scrapers:
     try:
         data_frames[f"{scraper.__name__}"] = scraper()
@@ -528,11 +552,12 @@ full_df = reduce(
 final_df = full_df.loc[datetime.today() - timedelta(days=1) :]
 
 # filter NaNs
-final_df = final_df.astype("object").fillna(" ").iloc[:350]
+final_df = final_df.astype("object").fillna(" ")
 
+SAVE_PATH = ""
 # added utf-8 encoding to fix write error on ubuntu
-final_df.to_csv("schedule.csv", encoding="utf-8")
-final_df.to_html("schedule.html")
+final_df.to_csv("{}schedule.csv".format(SAVE_PATH), encoding="utf-8")
+final_df.to_html("{}schedule.html".format(SAVE_PATH))
 
 finish = datetime.now()
 print("SCRAPER FINISHED AT: {}".format(finish))
