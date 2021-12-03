@@ -2,3 +2,4 @@ __pycache__
 .vscode
 *_env
 webscraper_droplet.py
+.DS_Store
