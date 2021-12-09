@@ -264,6 +264,8 @@ def django_scraper():
                 times = [times[0]]
 
             for start_time in times:
+                if ":" not in start_time:
+                    start_time = re.sub("([AP]M)", ":00\\1", start_time)
                 records.append([date, start_time, artist])
 
     df = pd.DataFrame(records, columns=["date", "time", "Django"])
